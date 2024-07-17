@@ -1,3 +1,6 @@
+import time
+import math
+
 def merge(arr, s, e):
     mid = s + (e - s) // 2
     length1 = mid + 1 - s 
@@ -53,8 +56,14 @@ n = int(input("Enter the size of array: "))
 for i in range(n):
     x = int(input(f"Enter element {i+1}: "))
     arr.append(x)
-
+    
+    
+start_time = time.time()
 merge_sort(arr, 0, len(arr)-1)
+end_time = time.time()
 # print(merge_sort(arr, 0, len(arr)-1))
 
 print("The sorted array is:", arr)
+print(f"Execution time: {end_time - start_time:.6f} seconds")
+# print(f"O({n} * log{n}) = {math.log(n)} is nearly equal to {end_time - start_time:.6f}")
+print("The time complexity of Merge Sort is O(nlogn).")
